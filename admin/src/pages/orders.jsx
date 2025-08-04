@@ -1,5 +1,5 @@
 
-const orders = () => {
+const Orders = () => {
   return (
     <div>
       
@@ -7,4 +7,4 @@ const orders = () => {
   )
 }
 
-export default orders
+export default Orders

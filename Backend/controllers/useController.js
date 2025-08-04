@@ -39,10 +39,14 @@ const registerUser = async (req, res) => {
         if (password.length < 8) {
             return res.json({ success: false, message: "Please enter a strong password" })
         }
-        const exists = await userModel.findOne({ email });
+        // const exists = await userModel.findOne({ email });
+        const exists = await userModel.findOne({ email: email.toLowerCase().trim() });
+           console.log("Exists:", exists);
+
         if (exists) {
             return res.json({ success: false, message: "User already exists" })
         }
+        console.log("Register Request Body:", req.body);
         //hashing the user password
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
