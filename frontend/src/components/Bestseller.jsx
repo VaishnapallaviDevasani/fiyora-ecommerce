@@ -7,10 +7,21 @@ const Bestseller = () => {
 
     const {product} =useContext(ShopContext);
     const [bestseller,setbestseller]=useState([]);
-    useEffect(()=>{
-        const bestproduct=product.filter((item)=>(item.bestseller));
-        setbestseller(bestproduct.slice(0,5))
-    },[])
+//     useEffect(()=>{
+//         if (!product) return; // Wait until product is available
+//   const bestproduct = product.filter((item) => item.bestseller);
+//   setbestseller(bestproduct.slice(0, 3));
+//   console.log("Products from context:", product);
+// }, [product]);
+useEffect(() => {
+  if (!product || product.length === 0) {
+    console.log("Product is either undefined or empty:", product);
+    return;
+  }
+  const bestproduct = product.filter((item) => item.bestseller);
+  setbestseller(bestproduct.slice(0, 3));
+  console.log("Filtered bestsellers:", bestproduct);
+}, [product]);
   return (
     <div className='my-10'>
       <div className='text-center text-3xl py-8'>

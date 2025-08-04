@@ -3,12 +3,17 @@ import { ShopContext } from '../context/shopContext';
 import Productitem from './Productitem';
 import Title from './Title';
 const LatestCollections = () => {
-
     const { product }=useContext(ShopContext);
     const [latestProducts,setlatestProducts] = useState([]);
-    useEffect(()=>{
-        setlatestProducts(product.slice(0,10));
-    },[])
+    // useEffect(()=>{
+    //     setlatestProducts(product.slice(0,10));
+    // },[])
+    useEffect(() => {
+    if (product && Array.isArray(product)) {
+        setlatestProducts(product.slice(0, 10));
+    }
+}, [product]);
+
 return (
     <div className='my-10'>
         <div className='text-center py-8 text-3xl'>
