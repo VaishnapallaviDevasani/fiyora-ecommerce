@@ -1,3 +1,7 @@
 node_modules
 
-*.env
+# Ignore environment files
+.env
+Backend/.env
+frontend/.env
+admin/.env
