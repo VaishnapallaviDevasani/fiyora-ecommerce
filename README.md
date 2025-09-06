@@ -33,6 +33,6 @@ It provides **user authentication, product management, and cart functionality** 
 Add order & payment modules
 Admin panel for product management
 Cloud storage for images (AWS S3 / Cloudinary)
-👩‍💻 Author
+
 
 Vaishnapallavi Devasani
