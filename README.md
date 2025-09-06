@@ -29,16 +29,6 @@ It provides **user authentication, product management, and cart functionality** 
 - **JWT (JSON Web Tokens)** – Authentication  
 - **Bcrypt.js** – Password hashing  
 - **Cloudinary** – Image storage (optional)
-
-## 📂 Project Structure
-FashionExplore/
-│
-├── controllers/        # Request handlers (auth, cart, product, etc.)
-├── middleware/         # Auth middleware
-├── models/             # Mongoose models (User, Product)
-├── routes/             # API route definitions
-├── server.js           # Entry point
-└── package.json
 💡 Future Improvements
 Add order & payment modules
 Admin panel for product management
